@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import { NavLink } from "react-router-dom";
 
 function Timer() {
   const [presentTime, setPresentTime] = useState(
@@ -31,10 +32,26 @@ function Timer() {
     <>
       <div className="card" id="card">
         <div className="card-body">
-          <p id="presenttime">{presentTime}</p>
+          <p id="presenttime">
+            <img
+              src="https://i.pinimg.com/736x/69/7e/92/697e92b4633f2fc1b399c2073b3898a6.jpg"
+              id="imgicon"
+              alt="sunriseicon"
+            />
+            {presentTime}
+          </p>
           <div id="today">Today : </div>
           <div id="presentdate">{presentDate}</div>
         </div>
+        <NavLink
+          to="/attend"
+          className="mx-5"
+          style={{ position: "relative", top: "-30px" }}
+        >
+          <button className="btn btn-primary border rounded-pill w-100 mb-3 h-100">
+            View Attendance
+          </button>
+        </NavLink>
       </div>
     </>
   );
